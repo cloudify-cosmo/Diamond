@@ -89,22 +89,6 @@ else:
             install_requires = ['ConfigObj', 'psutil', ]
 
 
-def get_version():
-    """
-        Read the version.txt file to get the new version string
-        Generate it if version.txt is not available. Generation
-        is required for pip installs
-    """
-    try:
-        f = open('version.txt')
-    except IOError:
-        os.system("./version.sh > version.txt")
-        f = open('version.txt')
-    version = ''.join(f.readlines()).rstrip()
-    f.close()
-    return version
-
-
 def pkgPath(root, path, rpath="/"):
     """
         Package up a path recursively
@@ -130,11 +114,10 @@ if os.name == 'nt':
 else:
     pkgPath('share/diamond/collectors', 'src/collectors')
 
-version = get_version()
 
 setup(
     name='diamond',
-    version=version,
+    version='3.5.0',
     url='https://github.com/BrightcoveOS/Diamond',
     author='The Diamond Team',
     author_email='https://github.com/BrightcoveOS/Diamond',
@@ -145,6 +128,5 @@ setup(
     scripts=['bin/diamond', 'bin/diamond-setup'],
     data_files=data_files,
     install_requires=install_requires,
-    #test_suite='test.main',
     ** setup_kwargs
 )
