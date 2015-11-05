@@ -29,7 +29,7 @@ if os.name == 'nt':
     pgm_files = os.environ["ProgramFiles"]
     base_files = os.path.join(pgm_files, 'diamond')
     data_files = [
-        (base_files, ['LICENSE', 'README.md', 'version.txt']),
+        (base_files, ['LICENSE', 'README.md']),
         (os.path.join(base_files, 'user_scripts'), []),
         (os.path.join(base_files, 'conf'), glob('conf/*.conf.*')),
         (os.path.join(base_files, 'collectors'), glob('conf/collectors/*')),
