@@ -39,7 +39,7 @@ if os.name == 'nt':
 
 else:
     data_files = [
-        ('share/diamond', ['LICENSE', 'README.md', 'version.txt']),
+        ('share/diamond', ['LICENSE', 'README.md']),
         ('share/diamond/user_scripts', []),
     ]
 
